@@ -1,0 +1,25 @@
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  margin: 0;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.navbar-name {
+  color: #F27494;
+  font-size: 1.3rem;;
+  font-family: 'Abel', sans-serif !important;
+}
+
+.mobile-menu {
+  filter: invert(.5);
+}
