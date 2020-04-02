@@ -16,6 +16,10 @@
   width: 40px;
 }
 
+.navbar-logo-text {
+  display: none
+}
+
 .navbar-name {
   color: #F27494;
   font-size: 1.3rem;;
@@ -54,7 +58,22 @@
 @media (min-width:901px) {
   #navbar{
     padding: 0.5%;
-    width: 100%;
+    width: 98vw;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo-text {
+    display: block;
+    width: 15%;
+    margin-left: 2%;
+  }
+
+  .navbar-name {
+    display: none;
   }
 
   .mobile-menu {
@@ -62,10 +81,8 @@
   }
 
   #navbar-list {
-    display: flex;
-    margin-right: 2%;
-    width: 25%;
-    padding: 0%;
+    display: block;
+    width: 40%;
   }
 
   #navbar-list li {

@@ -9,6 +9,7 @@ body {
   font-family: 'Roboto', sans-serif !important;
   margin-top: 20%;
   color: #616161;
+  padding: 0;
 }
 
 h1 {
@@ -109,6 +110,10 @@ a {
 
   p {
     font-size: 1.4rem;
+  }
+
+  ul {
+    display: block;
   }
 
   .landing-container {
