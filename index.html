@@ -5,53 +5,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ori Bermudez</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="./styles/main.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar-menu">
-    <!-- Navigation starts as empty UL that will be populated with JS -->
-    <img class="navbar-logo" src="./images/logo/icon_logo.png" alt="Ori Bermudez' logo"/>
-    <span class="navbar-name">ORI BERMUDEZ</span>
-    <img class="mobile-menu" src="./images/mobile_menu.svg" alt="Mobile menu icon" width="10%"/>
-    <ul id="navbar-list"></ul>
-  </nav>
-  <main>
-    <header class="main__hero">
-      <h1>Code Like a Girl</h1>
-    </header>
-    <!-- Each Section has an ID (used for the anchor) and 
-    a data attribute that will populate the li node.
-    Adding more sections will automatically populate nav.
-    The first section is set to active class by default -->
-    <section id="section1" data-nav="Section 1" class="your-active-class">
-      <div class="landing__container">
-        <h2>Section 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
-      </div>
-    </section>
-    <section id="section2" data-nav="Section 2">
-      <div class="landing__container">
-        <h2>Section 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
-      </div>
-    </section>
-    <section id="section3" data-nav="Section 3">
-      <div class="landing__container">
-        <h2>Section 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
-      </div>
-    </section>
-  </main>
-  <footer class="page__footer">
-    <p>&copy Udacity</p>
-  </footer>
+  <div class="container">
+    <nav id="navbar">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <img class="navbar-logo" src="./images/logo/icon_logo.png" alt="Ori Bermudez' logo"/>
+      <span class="navbar-name">ORI BERMUDEZ</span>
+      <img class="mobile-menu" src="./images/icons/mobile_menu.svg" alt="Mobile menu icon"/>
+      <ul id="navbar-list"></ul>
+    </nav>
+    <main>
+      <header id="hero" class=" center">
+        <div class="hero-text center">
+          <span>HELLO</span>
+          <span class="highlight">I'M ORI BEMRUDEZ,</span>
+          <span>A FRONT END DEVELOPER</span>
+          <span></span>
+        </div>
+      </header>
+      <!-- Each Section has an ID (used for the anchor) and 
+      a data attribute that will populate the li node.
+      Adding more sections will automatically populate nav.
+      The first section is set to active class by default -->
+      <section id="about" data-nav="About" class="active-class">
+        <div class="landing-container">
+          <h1>ABOUT</h1>
+          <p class="special-margin">
+            <span class="big-text">COMPELLING DESIGN</span> <br />
+            <span class="big-text">+</span> <br />
+            <span class="big-text">AWESOME FUNCTIONALITY</span> <br />
+          </p>
+          <p class="text">
+            This is my mantra. You need a website that looks
+            amazing and actually works! Here's when I come in. 
+            I'm very passionate about technology and I'd love to
+            use my skills to help you create the best web apps
+            you've ever seen.
+          </p>
+          <div class="circle-container">
+            <div class="circle emerald center">
+              <img src="./images/icons/responsive.png" alt="Responsive Design Icon"/>
+            </div>
+            <h2>RESPONSIVE</h2>
+            <p>
+              My web apps will work on any device.
+            </p>
+          </div>
+          <div class="circle-container">
+            <div class="circle pink center">
+              <img src="./images/icons/lightbulb.png" alt="Lightbulb Icon"/>
+            </div>
+            <h2>INTUITIVE</h2>
+            <p>
+              My designs are simple and easy to use.
+            </p>
+          </div>
+          <div class="circle-container">
+            <div class="circle deep-blue center">
+              <img src="./images/icons/rocket.png" alt="Rocket Icon"/>
+            </div>
+            <h2>DYNAMIC</h2>
+            <p>
+              Maintainable and database driven web apps.
+            </p>
+          </div>
+          <div class="circle-container">
+            <div class="circle light-blue center">
+              <img src="./images/icons/speed.png" alt="Speed Icon"/>
+            </div>
+            <h2>FAST</h2>
+            <p>
+              No lag, fast load websites.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="skills" data-nav="Section 2">
+        <div class="landing-container">
+          <h1>MY SKILLS</h1>
+          <img class="my-pic" src="./images/ori.jpeg" alt="My Photo" />
+          <p class="text">
+            I'm currently working as a freelance. <br />
+            <span class="highlight">Contact me!</span> <br />
+            Let's create something especial.
+          </p>
+          <div class="skill-set">
+            <div class="skill start-align">
+              <div class="skill-name">HTML</div>
+              <div class="html emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">CSS</div>
+              <div class="css emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">ES6</div>
+              <div class="js emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">React</div>
+              <div class="react emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">Redux</div>
+              <div class="redux emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">Angular</div>
+              <div class="angular emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">Node JS</div>
+              <div class="node emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">MongoDB</div>
+              <div class="mongo emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">SQL</div>
+              <div class="sql emerald"></div>
+            </div>
+            <div class="skill start-align">
+              <div class="skill-name">GitHub</div>
+              <div class="github emerald"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work" data-nav="Section 3">
+        <div class="landing-container">
+          <h1>WORK</h1>
+          <p></p>
+        </div>
+      </section>
+      <section id="connect" data-nav="Section 3">
+        <div class="landing-container">
+          <h1>CONNECT</h1>
+          <p></p>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="center">
+      <p>&copy Ori Bermudez 2020</p>
+    </footer>
+  </div>
 </body>
 </html>

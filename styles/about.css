@@ -1,0 +1,56 @@
+#about {
+  grid-area: about;
+}
+
+.big-text {
+  font-size: 1.6rem;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+  color: #f27494;
+}
+
+.special-margin {
+  margin: 15% 4% 7% 4%;
+  line-height: 2rem;
+}
+
+.text {
+  padding: 5%;
+}
+
+.circle-container {
+  margin: 15%;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 10% auto;
+}
+
+.circle img {
+  width: 55%;
+}
+
+.emerald {
+  background-color: #00a1a7;
+}
+
+.deep-blue {
+  background-color: #113a5d;
+}
+
+.pink {
+  background-color: #ff7a8a;
+}
+
+.light-blue {
+  background-color: #04c2c9;
+}
+
+.my-pic {
+  width: 200px;
+  border-radius: 5%;
+  margin: 10% auto 0% auto;
+}

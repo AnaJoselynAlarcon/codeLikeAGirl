@@ -1,12 +1,14 @@
-.navbar-menu {
+#navbar{
+  grid-area: navbar;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5%;
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: #fff;
   margin: 0;
+  z-index: 9999;
 }
 
 .navbar-logo {
@@ -22,4 +24,5 @@
 
 .mobile-menu {
   filter: invert(.5);
+  width: 10%;
 }

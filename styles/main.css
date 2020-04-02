@@ -1,10 +1,72 @@
 @import url("./navbar.css");
+@import url("./hero.css");
+@import url("./about.css");
+@import url("./skills.css");
 
 body {
   font-family: 'Roboto', sans-serif !important;
+  margin-top: 20%;
+  color: #616161;
+}
+
+h1 {
+  border-bottom: 3px solid #f27494;
+  color: #444649;
+  width: fit-content;
+  margin: 10% auto;
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: #444649;
+  font-size: 1.6rem;
+  letter-spacing: 0.3rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.1rem;
 }
 
 ul {
   list-style-type: none;
   display: none;
+}
+
+.container {
+  display: grid;    
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(70px, auto);
+  grid-template-areas: 
+  "navbar"
+  "hero"
+  "about"
+  "skills"
+  "work"
+  "connect"
+  "footer"
+  ;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-align {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.landing-container {
+  text-align: center;
+  padding: 1% 5% 1% 5%;
+}
+
+#footer {
+  grid-area: footer;
+  background-color: #f8f8f8;
+  color: #b4b4b4;
 }
