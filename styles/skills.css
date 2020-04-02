@@ -2,6 +2,10 @@
   grid-area: skills;
 }
 
+.about-me {
+  margin: 10% auto;
+}
+
 .skill {
   width: 100%;
   height: 30px;
