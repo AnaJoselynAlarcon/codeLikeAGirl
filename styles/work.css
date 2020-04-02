@@ -1,0 +1,45 @@
+#work {
+  grid-area: work;
+}
+
+.project-container {
+  margin: 20% auto 10% auto;
+}
+
+.project-container img {
+  width: 100%;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  #work {
+    grid-area: work;
+    background-color: #f9f9f9;
+  }
+
+  .project-container {
+    margin: 10% auto;
+  }
+
+  .project-container img {
+    width: 80%;
+  }
+}
+
+@media (min-width:901px) {
+  #work {
+    padding: 1.4% 0% 0.5% 0%;
+    background-color: #f9f9f9;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-container {
+    width: 40%;
+    margin: 1% auto;
+    padding-bottom: 10%;
+  }
+}

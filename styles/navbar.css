@@ -26,3 +26,57 @@
   filter: invert(.5);
   width: 10%;
 }
+
+#navbar-list {
+  display: none;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  #navbar{
+    padding: 3%;
+  }
+
+  .navbar-logo {
+    height: 60px;
+    width: 60px;
+  }
+
+  .navbar-name {
+    font-size: 2rem;;
+  }
+
+  .mobile-menu {
+    filter: invert(.5);
+    width: 8%;
+  }
+}
+
+@media (min-width:901px) {
+  #navbar{
+    padding: 0.5%;
+    width: 100%;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  #navbar-list {
+    display: flex;
+    margin-right: 2%;
+    width: 25%;
+    padding: 0%;
+  }
+
+  #navbar-list li {
+    margin: 1% 5%;
+  }
+
+  #navbar-list a:hover {
+    color: #ff7a8a;
+  }
+
+  .nav-active a{
+    color: #ff7a8a !important;
+  }
+}

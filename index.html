@@ -16,10 +16,26 @@
       <img class="navbar-logo" src="./images/logo/icon_logo.png" alt="Ori Bermudez' logo"/>
       <span class="navbar-name">ORI BERMUDEZ</span>
       <img class="mobile-menu" src="./images/icons/mobile_menu.svg" alt="Mobile menu icon"/>
-      <ul id="navbar-list"></ul>
+      <ul id="navbar-list">
+        <li class="nav-active">
+          <a href="#hero">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#work">Work</a>
+        </li>
+        <li>
+          <a href="#connect">Connect</a>
+        </li>
+      </ul>
     </nav>
     <main>
-      <header id="hero" class=" center">
+      <header id="hero" class="center">
         <div class="hero-text center">
           <span>HELLO</span>
           <span class="highlight">I'M ORI BERMUDEZ,</span>
@@ -34,105 +50,113 @@
       <section id="about" data-nav="About" class="active-class">
         <div class="landing-container">
           <h1>ABOUT</h1>
-          <p class="special-margin">
-            <span class="big-text">COMPELLING DESIGN</span> <br />
-            <span class="big-text">+</span> <br />
-            <span class="big-text">AWESOME FUNCTIONALITY</span> <br />
-          </p>
-          <p class="text">
-            This is my mantra. You need a website that looks
-            amazing and actually works! Here's when I come in.
-            I'm very passionate about technology and I'd love to
-            use my skills to help you create the best web apps
-            you've ever seen.
-          </p>
-          <div class="circle-container">
-            <div class="circle emerald center">
-              <img src="./images/icons/responsive.png" alt="Responsive Design Icon"/>
-            </div>
-            <h2>RESPONSIVE</h2>
-            <p>
-              My web apps will work on any device.
+          <div class="about-text">
+            <p class="special-margin">
+              <span class="big-text">COMPELLING DESIGN</span> <br />
+              <span class="big-text">+</span> <br />
+              <span class="big-text">AWESOME FUNCTIONALITY</span> <br />
+            </p>
+            <p class="text center">
+              This is my mantra. You need a website that looks
+              amazing and actually works! Here's when I come in.
+              I'm very passionate about technology and I'd love to
+              use my skills to help you create the best web apps
+              you've ever seen.
             </p>
           </div>
-          <div class="circle-container">
-            <div class="circle pink center">
-              <img src="./images/icons/lightbulb.png" alt="Lightbulb Icon"/>
+          <div class="circle-grid">
+            <div id="responsive" class="circle-container">
+              <div class="circle emerald center">
+                <img src="./images/icons/responsive.png" alt="Responsive Design Icon"/>
+              </div>
+              <h2>RESPONSIVE</h2>
+              <p>
+                My web apps will work on any device.
+              </p>
             </div>
-            <h2>INTUITIVE</h2>
-            <p>
-              My designs are simple and easy to use.
-            </p>
-          </div>
-          <div class="circle-container">
-            <div class="circle deep-blue center">
-              <img src="./images/icons/rocket.png" alt="Rocket Icon"/>
+            <div id="intuitive" class="circle-container">
+              <div class="circle pink center">
+                <img src="./images/icons/lightbulb.png" alt="Lightbulb Icon"/>
+              </div>
+              <h2>INTUITIVE</h2>
+              <p>
+                My designs are simple and easy to use.
+              </p>
             </div>
-            <h2>DYNAMIC</h2>
-            <p>
-              Maintainable and database driven web apps.
-            </p>
-          </div>
-          <div class="circle-container">
-            <div class="circle light-blue center">
-              <img src="./images/icons/speed.png" alt="Speed Icon"/>
+            <div id="dynamic" class="circle-container">
+              <div class="circle deep-blue center">
+                <img src="./images/icons/rocket.png" alt="Rocket Icon"/>
+              </div>
+              <h2>DYNAMIC</h2>
+              <p>
+                Maintainable and database driven web apps.
+              </p>
             </div>
-            <h2>FAST</h2>
-            <p>
-              No lag, fast load websites.
-            </p>
+            <div id="fast" class="circle-container">
+              <div class="circle light-blue center">
+                <img src="./images/icons/speed.png" alt="Speed Icon"/>
+              </div>
+              <h2>FAST</h2>
+              <p>
+                No lag, fast load websites.
+              </p>
+            </div>
           </div>
         </div>
       </section>
       <section id="skills" data-nav="Section 2">
         <div class="landing-container">
           <h1>MY SKILLS</h1>
-          <img class="my-pic" src="./images/ori.jpg" alt="My Photo" />
-          <p class="about-me">
-            I'm currently working as a freelance. <br />
-            <a class="highlight" href="#connect">Contact me!</a> <br />
-            Let's create something special.
-          </p>
-          <div class="skill-set">
-            <div class="skill start-align">
-              <div class="skill-name center">HTML</div>
-              <div class="html emerald"></div>
+          <div class="skills-container">
+            <div class="my-info">
+              <img class="my-pic" src="./images/ori.jpg" alt="My Photo" />
+              <p class="about-me">
+                I'm currently working as a freelance. <br />
+                <a class="highlight" href="#connect">Contact me!</a> <br />
+                Let's create something special.
+              </p>
             </div>
-            <div class="skill start-align">
-              <div class="skill-name center">CSS</div>
-              <div class="css emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">ES6</div>
-              <div class="js emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">React</div>
-              <div class="react emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">Redux</div>
-              <div class="redux emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">Angular</div>
-              <div class="angular emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">Node JS</div>
-              <div class="node emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">MongoDB</div>
-              <div class="mongo emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">SQL</div>
-              <div class="sql emerald"></div>
-            </div>
-            <div class="skill start-align">
-              <div class="skill-name center">GitHub</div>
-              <div class="github emerald"></div>
+            <div class="skill-set">
+              <div class="skill start-align">
+                <div class="skill-name center">HTML</div>
+                <div class="html emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">CSS</div>
+                <div class="css emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">ES6</div>
+                <div class="js emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">React</div>
+                <div class="react emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">Redux</div>
+                <div class="redux emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">Angular</div>
+                <div class="angular emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">Node JS</div>
+                <div class="node emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">MongoDB</div>
+                <div class="mongo emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">SQL</div>
+                <div class="sql emerald"></div>
+              </div>
+              <div class="skill start-align">
+                <div class="skill-name center">GitHub</div>
+                <div class="github emerald"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -140,26 +164,28 @@
       <section id="work" data-nav="Section 3">
         <div class="landing-container">
           <h1>WORK</h1>
-          <div class="project-container">
-            <a
-            href="https://oribermudez.github.io/healthyVibes/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              <h2>Healthy Vibes</h2>
-              <img src="./images/healthy_vibes.jpg" alt="Healthy Vibes Project" />
-            </a>
-          </div>
-          <div class="project-container">
-            <a
-            class="project-container"
-            href="https://oribermudez.github.io/healthyVibes/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              <h2>Code Like A Girl</h2>
-              <img src="./images/clip_careers.jpg" alt="Code Like A Girl Project" />
-            </a>
+          <div class="projects">
+            <div class="project-container">
+              <a
+              href="https://oribermudez.github.io/healthyVibes/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+                <h2>Healthy Vibes</h2>
+                <img src="./images/healthy_vibes.jpg" alt="Healthy Vibes Project" />
+              </a>
+            </div>
+            <div class="project-container">
+              <a
+              class="project-container"
+              href="https://oribermudez.github.io/healthyVibes/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+                <h2>Code Like A Girl</h2>
+                <img src="./images/clip_careers.jpg" alt="Code Like A Girl Project" />
+              </a>
+            </div>
           </div>
         </div>
       </section>

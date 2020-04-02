@@ -2,6 +2,12 @@
   grid-area: skills;
 }
 
+.my-pic {
+  width: 200px;
+  border-radius: 5%;
+  margin: 10% auto 0% auto;
+}
+
 .about-me {
   margin: 10% auto;
 }
@@ -38,4 +44,64 @@
 .angular, .mongo {
   width: 35%;
   height: 30px;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .my-pic {
+    width: 320px;
+    margin: 4% auto;
+  }
+
+  .about-me {
+    margin: 4% auto;
+  }
+
+  .skill {
+    width: 75%;
+    height: 30px;
+    background-color: #eee;
+    margin: 5% auto;
+  }
+}
+
+@media (min-width:901px) {
+  #skills {
+    padding: 1.4% 0% 0% 0%;
+  }
+
+  .skills-container {
+    display: flex;
+    margin: 4% auto;
+  }
+
+  .my-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30%;
+  }
+
+  .my-pic {
+    width: 300px;
+    margin: 1%;
+  }
+
+ .about-me {
+  margin: 1%;
+  width: 60%;
+  text-align: center;
+  font-size: 1.1rem;
+  }
+
+  .skill-set {
+    width: 70%;
+  }
+
+  .skill {
+    width: 75%;
+    height: 30px;
+    background-color: #eee;
+    margin: 2% auto;
+  }
 }
