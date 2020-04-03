@@ -36,9 +36,10 @@ const setAnchor = (element, content) => {
 
 /**
 * setList
-* @description Sets id and click event listener to navbar li
+* @description Sets id and click event listeners to navbar li
 * @param {HTMLElement} element - An HTML element
 * @param {string} section - The section name
+* @param {string} type - Shows what kind of list it is
 */
 const setList = (element, section, type) => {
   element.setAttribute('id', `${type}-${section}`);
@@ -51,7 +52,7 @@ const setList = (element, section, type) => {
 * @description Appends an anchor and a list to populate ul
 * @param {HTMLElement} navbar - An HTML ul element
 * @param {HTMLElement} list - An HTML li element
-* @param {HTMLElement} list - An HTML anchor element
+* @param {HTMLElement} anchor - An HTML anchor element
 */
 const appendAnchorAndList = (navbar, list, anchor) => {
   list.appendChild(anchor);
@@ -146,7 +147,7 @@ const scrollToSection = (event) => {
   window.scrollTo({ top, behavior: 'smooth'});
 };
 
-// Hamburger menu
+// Mobile menu
 /**
 * showMobileMenu
 * @description Sets a class to show the mobile menu
@@ -180,7 +181,7 @@ createNavbar(SECTIONS, 'mobile-list', 'mobile');
 // Listen to scroll event in order to set active class
 window.addEventListener('scroll', setActiveClass);
 
-//Sets the event listener for hamburger menu
+//Sets the event listeners for mobile menu
 setMobileMenu();
 setMobileClose();
 

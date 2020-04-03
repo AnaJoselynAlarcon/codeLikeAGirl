@@ -103,6 +103,14 @@
     filter: invert(.5);
     width: 8%;
   }
+
+  #mobile-list a {
+    font-size: 1.7rem;
+  }
+
+  #close-icon{
+    width: 6%;
+  }
 }
 
 @media (min-width:901px) {
