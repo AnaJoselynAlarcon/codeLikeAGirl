@@ -97,7 +97,7 @@ const isInViewport = (element) => {
   const viewportHeight = (window.innerHeight || html.clientHeight);
 
   return (
-    top >= -30 &&
+    top >= 0 &&
     bottom >= 0 &&
     top < viewportHeight
   );
@@ -112,7 +112,6 @@ const setActiveClass = () => {
   SECTIONS.forEach(function(section) {
     let activeSection = document.querySelector(`#nav-${section.id}`);
     let activeMobile = document.querySelector(`#mobile-${section.id}`);
-    console.log(section, isInViewport(section))
     if(isInViewport(section)) {
       activeSection.classList.add('nav-active');
       activeMobile.classList.add('nav-active');
