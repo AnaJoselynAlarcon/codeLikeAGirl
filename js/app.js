@@ -43,6 +43,7 @@ const setAnchor = (element, content) => {
 const setList = (element, section, type) => {
   element.setAttribute('id', `${type}-${section}`);
   element.addEventListener('click', scrollToSection);
+  if (type === 'mobile') element.addEventListener('click', closeMobileMenu);
 };
 
 /**
@@ -77,19 +78,19 @@ const isInViewport = (element) => {
 };
 
 /**
-* setHamburger
+* setMobileMenu
 * @description Sets event listener on hamburger
 */
-const setHamburger = () => {
+const setMobileMenu = () => {
   const mobileMenu = document.querySelector('.mobile-menu');
   mobileMenu.addEventListener('click', showMobileMenu);
 };
 
 /**
-* setCloseIcon
+* setMobileClose
 * @description Sets event listener on close icon
 */
-const setCloseSign = () => {
+const setMobileClose = () => {
   const mobileMenu = document.querySelector('#close-icon');
   mobileMenu.addEventListener('click', closeMobileMenu);
 };
@@ -180,7 +181,7 @@ createNavbar(SECTIONS, 'mobile-list', 'mobile');
 window.addEventListener('scroll', setActiveClass);
 
 //Sets the event listener for hamburger menu
-setHamburger();
-setCloseSign();
+setMobileMenu();
+setMobileClose();
 
 

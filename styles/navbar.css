@@ -38,6 +38,10 @@
   width: 70vw;
   height: 100vh;
   background-color: #00a1a7;
+  display: flex ;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
 }
 
 #mobile-list {
@@ -78,6 +82,7 @@
 
 #close-icon{
   width: 10%;
+  margin: 10%;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
