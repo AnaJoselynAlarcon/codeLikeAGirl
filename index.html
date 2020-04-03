@@ -11,16 +11,15 @@
 <body>
   <div class="container">
     <nav id="navbar">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
       <div class="logo">
         <img class="navbar-logo" src="./images/logo/icon_logo.png" alt="Ori Bermudez' logo"/>
         <img class="navbar-logo-text" src="./images/logo/text_logo.png" alt="Ori Bermudez' logo"/>
       </div>
       <span class="navbar-name">ORI BERMUDEZ</span>
       <img class="mobile-menu" src="./images/icons/mobile_menu.svg" alt="Mobile menu icon"/>
-      <div id="navbar-list">
-        <ul class="center">
-          <li class="nav-active">
+      <div id="navbar-menu">
+        <ul id="navbar-list" class="center">
+          <!-- <li class="nav-active">
             <a href="#hero">Home</a>
           </li>
           <li>
@@ -34,23 +33,19 @@
           </li>
           <li>
             <a href="#connect">Connect</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
     <main>
-      <header id="hero" class="center">
+      <section id="home" class="center">
         <div class="hero-text center">
           <span>HELLO</span>
           <span class="highlight">I'M ORI BERMUDEZ,</span>
           <span>A FRONT END DEVELOPER</span>
           <span></span>
         </div>
-      </header>
-      <!-- Each Section has an ID (used for the anchor) and
-      a data attribute that will populate the li node.
-      Adding more sections will automatically populate nav.
-      The first section is set to active class by default -->
+      </section>
       <section id="about" data-nav="About" class="active-class">
         <div class="landing-container">
           <h1>ABOUT</h1>
@@ -242,5 +237,6 @@
       <p>&copy Ori Bermudez 2020</p>
     </footer>
   </div>
+  <script src="./js/app.js"></script>
 </body>
 </html>

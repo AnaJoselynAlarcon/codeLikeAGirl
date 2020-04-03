@@ -31,7 +31,7 @@
   width: 10%;
 }
 
-#navbar-list {
+#navbar-menu {
   display: none;
 }
 
@@ -80,16 +80,16 @@
     display: none;
   }
 
-  #navbar-list {
+  #navbar-menu {
     display: block;
     width: 35%;
   }
 
-  #navbar-list li {
+  #navbar-menu li {
     margin: 1% 5%;
   }
 
-  #navbar-list a:hover {
+  #navbar-menu a:hover {
     color: #ff7a8a;
   }
 
