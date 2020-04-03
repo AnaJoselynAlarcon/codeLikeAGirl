@@ -86,8 +86,8 @@ const setHamburger = () => {
 };
 
 /**
-* setCloseSign
-* @description Sets event listener on hamburger
+* setCloseIcon
+* @description Sets event listener on close icon
 */
 const setCloseSign = () => {
   const mobileMenu = document.querySelector('#close-icon');
@@ -148,20 +148,18 @@ const scrollToSection = (event) => {
 // Hamburger menu
 /**
 * showMobileMenu
-* @description Scrolls to the section clicked
-* @param {event} event - The event of clicking on any of the navbar's li
+* @description Sets a class to show the mobile menu
 */
-const showMobileMenu = (event) => {
+const showMobileMenu = () => {
   const mobileWindow = document.querySelector('#mobile-window');
   mobileWindow.classList.add('show');
 };
 
 /**
 * closeMobileMenu
-* @description Scrolls to the section clicked
-* @param {event} event - The event of clicking on any of the navbar's li
+* @description Sets and removes classes to hide the mobile menu
 */
-const closeMobileMenu = (event) => {
+const closeMobileMenu = () => {
   const mobileWindow = document.querySelector('#mobile-window');
   mobileWindow.classList.remove('show');
   mobileWindow.classList.add('remove');

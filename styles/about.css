@@ -1,5 +1,6 @@
 #about {
   grid-area: about;
+  padding: 10% 0% 0% 0%;
 }
 
 .big-text {
