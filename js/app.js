@@ -1,31 +1,10 @@
-/**
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
-*/
 
-/**
- * Define Global Variables
-*/
 const SECTIONS = document.querySelectorAll('section');
 
-/**
- * End Global Variables
- * Start Helper Functions
-*/
-
+// --------------- DYNAMIC NAVBAR ---------------
 /**
 * setAnchor
-* @description Sets and capitalize innerHTML of an anchor
+* @description Sets and capitalizes innerHTML of an anchor
 * @param {HTMLElement} element - An HTML element
 * @param {string} content - The text that will be displayed
 */
@@ -60,49 +39,6 @@ const appendAnchorAndList = (navbar, list, anchor) => {
 };
 
 /**
-* isInViewport
-* @description Returns true if the element is visible in viewport
-* @param {HTMLElement} element - An HTML element
-*/
-const isInViewport = (element) => {
-  const { top, bottom } = element.getBoundingClientRect();
-  const html = document.documentElement;
-  const viewportHeight = (window.innerHeight || html.clientHeight);
-  const viewportWidth = (window.innerWidth || html.clientWidth);
-
-  return (
-    top >= -30 &&
-    bottom >= 0 &&
-    top < viewportHeight &&
-    bottom < viewportWidth
-  );
-};
-
-/**
-* setMobileMenu
-* @description Sets event listener on hamburger
-*/
-const setMobileMenu = () => {
-  const mobileMenu = document.querySelector('.mobile-menu');
-  mobileMenu.addEventListener('click', showMobileMenu);
-};
-
-/**
-* setMobileClose
-* @description Sets event listener on close icon
-*/
-const setMobileClose = () => {
-  const mobileMenu = document.querySelector('#close-icon');
-  mobileMenu.addEventListener('click', closeMobileMenu);
-};
-
-/**
- * End Helper Functions
- * Begin Main Functions
-*/
-
-// build the nav
-/**
 * createNavbar
 * @description Creates dynamic navbar
 * @param {NodeList} sections - A list with all the html's sections info
@@ -118,36 +54,18 @@ const createNavbar = (sections, list, type) => {
   });
 };
 
-// Add class 'active' to section when near top of viewport
+// --------------- MOBILE MENU ---------------
 /**
-* setActiveClass
-* @description Sets a nav-active class to the li when section near top viewport
-* @param {NodeList} sections - A list with all the html's sections info
+* setMobileMenuListeners
+* @description Sets event listener on mobile menu
 */
-const setActiveClass = () => {
-  SECTIONS.forEach(function(section) {
-    let activeSection = document.querySelector(`#nav-${section.id}`);
-    if(isInViewport(section)) {
-      activeSection.classList.add('nav-active');
-    } else {
-      activeSection.classList.remove('nav-active');
-    }
-  });
+const setMobileMenuListeners = () => {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  mobileMenu.addEventListener('click', showMobileMenu);
+  const closeIcon = document.querySelector('#close-icon');
+  closeIcon.addEventListener('click', closeMobileMenu);
 };
 
-// Scroll to anchor ID using scrollTO event
-/**
-* scrollToSection
-* @description Scrolls to the section clicked
-* @param {event} event - The event of clicking on any of the navbar's li
-*/
-const scrollToSection = (event) => {
-  const section = document.querySelector(`#${event.target.innerHTML}`);
-  const top = section.getBoundingClientRect().top + window.pageYOffset;
-  window.scrollTo({ top, behavior: 'smooth'});
-};
-
-// Mobile menu
 /**
 * showMobileMenu
 * @description Sets a class to show the mobile menu
@@ -167,22 +85,66 @@ const closeMobileMenu = () => {
   mobileWindow.classList.add('remove');
 };
 
+// --------------- SCROLL AND VIEWPORT ---------------
 /**
- * End Main Functions
- * Begin Events
+* isInViewport
+* @description Returns true if the element is visible in viewport
+* @param {HTMLElement} element - An HTML element
 */
+const isInViewport = (element) => {
+  const { top, bottom } = element.getBoundingClientRect();
+  const html = document.documentElement;
+  const viewportHeight = (window.innerHeight || html.clientHeight);
 
-// Build desktop menu
+  return (
+    top >= -30 &&
+    bottom >= 0 &&
+    top < viewportHeight
+  );
+};
+
+/**
+* setActiveClass
+* @description Sets and removes nav-active class when in viewport
+* for mobile and desktop navbars
+*/
+const setActiveClass = () => {
+  SECTIONS.forEach(function(section) {
+    let activeSection = document.querySelector(`#nav-${section.id}`);
+    let activeMobile = document.querySelector(`#mobile-${section.id}`);
+    console.log(section, isInViewport(section))
+    if(isInViewport(section)) {
+      activeSection.classList.add('nav-active');
+      activeMobile.classList.add('nav-active');
+    } else {
+      activeSection.classList.remove('nav-active');
+      activeMobile.classList.remove('nav-active');
+    }
+  });
+};
+
+/**
+* scrollToSection
+* @description Scrolls to the section clicked
+* @param {event} event - The event of clicking on any of the navbar's li
+*/
+const scrollToSection = (event) => {
+  const section = document.querySelector(`#${event.target.innerHTML}`);
+  const top = section.getBoundingClientRect().top + window.pageYOffset;
+  window.scrollTo({ top, behavior: 'smooth'});
+};
+
+
+// --------------- EVENTS ---------------
+
+//Creates desktop navbar
 createNavbar(SECTIONS, 'navbar-list', 'nav');
 
-//Build mobile menu
+//Creates mobile navbar and sets listeners
 createNavbar(SECTIONS, 'mobile-list', 'mobile');
+setMobileMenuListeners();
 
-// Listen to scroll event in order to set active class
+//Listens for an scroll
 window.addEventListener('scroll', setActiveClass);
-
-//Sets the event listeners for mobile menu
-setMobileMenu();
-setMobileClose();
 
 
