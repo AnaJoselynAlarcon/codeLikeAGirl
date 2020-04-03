@@ -67,6 +67,7 @@
 @media (min-width:901px) {
   #skills {
     padding: 1.4% 0% 1.5% 0%;
+    height: 100vh;
   }
 
   .skills-container {

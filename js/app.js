@@ -16,9 +16,8 @@
 /**
  * Define Global Variables
 */
+window.addEventListener('scroll', setActiveClass);
 const SECTIONS = document.querySelectorAll('section');
-
-
 
 /**
  * End Global Variables
@@ -26,13 +25,25 @@ const SECTIONS = document.querySelectorAll('section');
 */
 
 /**
-* setContent
-* @description Sets the innerHTML of an element
+* setAnchor
+* @description Sets and capitalize innerHTML of an anchor
 * @param {HTMLElement} element - An HTML element
 * @param {string} content - The text that will be displayed
 */
-function setContent(element, content) {
-  element.innerHTML = `${content.toUpperCase()}`;
+function setAnchor(element, content) {
+  element.innerHTML = `${content}`;
+  element.style.textTransform = 'capitalize';
+}
+
+/**
+* setList
+* @description Sets id and click event listener to navbar li
+* @param {HTMLElement} element - An HTML element
+* @param {string} section - The section name
+*/
+function setList(element, section) {
+  element.setAttribute('id', `nav-${section}`);
+  element.addEventListener('click', scrollToSection)
 }
 
 /**
@@ -48,21 +59,23 @@ function appendAnchorAndList(navbar, list, anchor) {
 }
 
 /**
-* createNavbar
-* @description Creates dynamic navbar
-* @param {NodeList} sections - A list with all the html's sections info
+* isInViewport
+* @description Returns true if the element is visible in viewport
+* @param {HTMLElement} element - An HTML element
 */
-function createNavbar(sections) {
-  const navbarList = document.querySelector('#navbar-list');
-  return sections.forEach(function(section) {
-    let listItem = document.createElement('li');
-    let anchorItem = document.createElement('a');
-    setContent(anchorItem, section.id);
-    appendAnchorAndList(navbarList, listItem, anchorItem);
-  }
-)}
+function isInViewport (element) {
+  const { top, bottom } = element.getBoundingClientRect();
+  const html = document.documentElement;
+  const viewportHeight = (window.innerHeight || html.clientHeight);
+  const viewportWidth = (window.innerWidth || html.clientWidth);
 
-
+  return (
+    top >= -30 &&
+    bottom >= 0 &&
+    top < viewportHeight &&
+    bottom < viewportWidth
+  );
+}
 
 /**
  * End Helper Functions
@@ -70,13 +83,51 @@ function createNavbar(sections) {
 */
 
 // build the nav
-createNavbar(SECTIONS);
+/**
+* createNavbar
+* @description Creates dynamic navbar
+* @param {NodeList} sections - A list with all the html's sections info
+*/
+function createNavbar(sections) {
+  const navbarList = document.querySelector('#navbar-list');
+  sections.forEach(function(section, index) {
+    let listItem = document.createElement('li');
+    let anchorItem = document.createElement('a');
+    setAnchor(anchorItem, section.id, index);
+    setList(listItem, section.id, index)
+    appendAnchorAndList(navbarList, listItem, anchorItem);
+  });
+}
 
 // Add class 'active' to section when near top of viewport
-
+/**
+* setActiveClass
+* @description Sets a nav-active class to the li when section near top viewport
+* @param {NodeList} sections - A list with all the html's sections info
+*/
+function setActiveClass() {
+  SECTIONS.forEach(function(section) {
+    let activeSection = document.querySelector(`#nav-${section.id}`)
+    if(isInViewport(section)) {
+      activeSection.classList.add('nav-active')
+    } else {
+      activeSection.classList.remove('nav-active')
+    }
+  });
+}
 
 // Scroll to anchor ID using scrollTO event
-
+/**
+* scrollToSection
+* @description Scrolls to the section clicked
+* @param {event} event - The event of clicking on any of the navbar's li
+*/
+function scrollToSection(event) {
+  console.log(event.target)
+  const section = document.querySelector(`#${event.target.innerHTML}`)
+  const top = section.getBoundingClientRect().top + window.pageYOffset;
+  window.scrollTo({ top, behavior: 'smooth'});
+}
 
 /**
  * End Main Functions
@@ -84,9 +135,10 @@ createNavbar(SECTIONS);
 */
 
 // Build menu
+createNavbar(SECTIONS);
 
-// Scroll to section on link click
 
 // Set sections as active
+setActiveClass();
 
 

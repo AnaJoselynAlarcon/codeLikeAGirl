@@ -34,8 +34,8 @@
 }
 
 @media (min-width:901px) {
-  #hero {
-    height: 95vh;
+  #home {
+    height: 100vh;
     justify-content: flex-end !important;
   }
 

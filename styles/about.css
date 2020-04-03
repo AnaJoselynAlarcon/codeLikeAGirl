@@ -103,6 +103,7 @@
 @media (min-width:901px) {
   #about {
     padding: 1.4% 0% 0% 0%;
+    height: 100vh;
   }
 
   .special-margin {
