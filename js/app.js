@@ -16,7 +16,6 @@
 /**
  * Define Global Variables
 */
-window.addEventListener('scroll', setActiveClass);
 const SECTIONS = document.querySelectorAll('section');
 
 /**
@@ -30,10 +29,10 @@ const SECTIONS = document.querySelectorAll('section');
 * @param {HTMLElement} element - An HTML element
 * @param {string} content - The text that will be displayed
 */
-function setAnchor(element, content) {
+const setAnchor = (element, content) => {
   element.innerHTML = `${content}`;
   element.style.textTransform = 'capitalize';
-}
+};
 
 /**
 * setList
@@ -41,10 +40,10 @@ function setAnchor(element, content) {
 * @param {HTMLElement} element - An HTML element
 * @param {string} section - The section name
 */
-function setList(element, section) {
-  element.setAttribute('id', `nav-${section}`);
-  element.addEventListener('click', scrollToSection)
-}
+const setList = (element, section, type) => {
+  element.setAttribute('id', `${type}-${section}`);
+  element.addEventListener('click', scrollToSection);
+};
 
 /**
 * appendAnchorAndList
@@ -53,17 +52,17 @@ function setList(element, section) {
 * @param {HTMLElement} list - An HTML li element
 * @param {HTMLElement} list - An HTML anchor element
 */
-function appendAnchorAndList(navbar, list, anchor) {
+const appendAnchorAndList = (navbar, list, anchor) => {
   list.appendChild(anchor);
   navbar.appendChild(list);
-}
+};
 
 /**
 * isInViewport
 * @description Returns true if the element is visible in viewport
 * @param {HTMLElement} element - An HTML element
 */
-function isInViewport (element) {
+const isInViewport = (element) => {
   const { top, bottom } = element.getBoundingClientRect();
   const html = document.documentElement;
   const viewportHeight = (window.innerHeight || html.clientHeight);
@@ -75,7 +74,25 @@ function isInViewport (element) {
     top < viewportHeight &&
     bottom < viewportWidth
   );
-}
+};
+
+/**
+* setHamburger
+* @description Sets event listener on hamburger
+*/
+const setHamburger = () => {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  mobileMenu.addEventListener('click', showMobileMenu);
+};
+
+/**
+* setCloseSign
+* @description Sets event listener on hamburger
+*/
+const setCloseSign = () => {
+  const mobileMenu = document.querySelector('#close-icon');
+  mobileMenu.addEventListener('click', closeMobileMenu);
+};
 
 /**
  * End Helper Functions
@@ -88,16 +105,16 @@ function isInViewport (element) {
 * @description Creates dynamic navbar
 * @param {NodeList} sections - A list with all the html's sections info
 */
-function createNavbar(sections) {
-  const navbarList = document.querySelector('#navbar-list');
-  sections.forEach(function(section, index) {
+const createNavbar = (sections, list, type) => {
+  const navbarList = document.querySelector(`#${list}`);
+  sections.forEach(function(section) {
     let listItem = document.createElement('li');
     let anchorItem = document.createElement('a');
-    setAnchor(anchorItem, section.id, index);
-    setList(listItem, section.id, index)
+    setAnchor(anchorItem, section.id);
+    setList(listItem, section.id, type);
     appendAnchorAndList(navbarList, listItem, anchorItem);
   });
-}
+};
 
 // Add class 'active' to section when near top of viewport
 /**
@@ -105,16 +122,16 @@ function createNavbar(sections) {
 * @description Sets a nav-active class to the li when section near top viewport
 * @param {NodeList} sections - A list with all the html's sections info
 */
-function setActiveClass() {
+const setActiveClass = () => {
   SECTIONS.forEach(function(section) {
-    let activeSection = document.querySelector(`#nav-${section.id}`)
+    let activeSection = document.querySelector(`#nav-${section.id}`);
     if(isInViewport(section)) {
-      activeSection.classList.add('nav-active')
+      activeSection.classList.add('nav-active');
     } else {
-      activeSection.classList.remove('nav-active')
+      activeSection.classList.remove('nav-active');
     }
   });
-}
+};
 
 // Scroll to anchor ID using scrollTO event
 /**
@@ -122,23 +139,50 @@ function setActiveClass() {
 * @description Scrolls to the section clicked
 * @param {event} event - The event of clicking on any of the navbar's li
 */
-function scrollToSection(event) {
-  console.log(event.target)
-  const section = document.querySelector(`#${event.target.innerHTML}`)
+const scrollToSection = (event) => {
+  const section = document.querySelector(`#${event.target.innerHTML}`);
   const top = section.getBoundingClientRect().top + window.pageYOffset;
   window.scrollTo({ top, behavior: 'smooth'});
-}
+};
+
+// Hamburger menu
+/**
+* showMobileMenu
+* @description Scrolls to the section clicked
+* @param {event} event - The event of clicking on any of the navbar's li
+*/
+const showMobileMenu = (event) => {
+  const mobileWindow = document.querySelector('#mobile-window');
+  mobileWindow.classList.add('show');
+};
+
+/**
+* closeMobileMenu
+* @description Scrolls to the section clicked
+* @param {event} event - The event of clicking on any of the navbar's li
+*/
+const closeMobileMenu = (event) => {
+  const mobileWindow = document.querySelector('#mobile-window');
+  mobileWindow.classList.remove('show');
+  mobileWindow.classList.add('remove');
+};
 
 /**
  * End Main Functions
  * Begin Events
 */
 
-// Build menu
-createNavbar(SECTIONS);
+// Build desktop menu
+createNavbar(SECTIONS, 'navbar-list', 'nav');
 
+//Build mobile menu
+createNavbar(SECTIONS, 'mobile-list', 'mobile');
 
-// Set sections as active
-setActiveClass();
+// Listen to scroll event in order to set active class
+window.addEventListener('scroll', setActiveClass);
+
+//Sets the event listener for hamburger menu
+setHamburger();
+setCloseSign();
 
 

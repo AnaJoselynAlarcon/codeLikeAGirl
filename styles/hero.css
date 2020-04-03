@@ -2,7 +2,7 @@
   grid-area: hero;
   background-image: url("../images/workspace.jpg");
   background-size: cover;
-  height: 90vh;
+  height: 100vh;
   color: #000;
 }
 
@@ -35,7 +35,6 @@
 
 @media (min-width:901px) {
   #home {
-    height: 100vh;
     justify-content: flex-end !important;
   }
 
