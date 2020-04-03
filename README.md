@@ -1,5 +1,5 @@
 # Code Like A Girl
-Udacity: Front End Developer Nanodegree Program.
+Udacity: Second Project of Front End Developer Nanodegree Program.
 
 # Description
 This is a landing page of a personal website that seeks to sell me as a developer in a very creative way. <br />
