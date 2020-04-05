@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   #work {
     grid-area: work;
     background-color: #f9f9f9;
@@ -26,7 +26,7 @@
   }
 }
 
-@media (min-width:901px) {
+@media (min-width:1025px) {
   #work {
     padding: 1.4% 0% 0.5% 0%;
     background-color: #f9f9f9;

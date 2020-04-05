@@ -47,7 +47,7 @@
   height: 30px;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   .my-pic {
     width: 320px;
     margin: 4% auto;
@@ -65,7 +65,7 @@
   }
 }
 
-@media (min-width:901px) {
+@media (min-width: 1025px) {
   #skills {
     padding: 1.4% 0% 1.5% 0%;
     height: 100vh;

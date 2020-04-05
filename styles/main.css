@@ -81,7 +81,7 @@ a {
   color: #b4b4b4;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   body {
     margin-top: 14%;
   }
@@ -97,7 +97,7 @@ a {
   }
 }
 
-@media (min-width:901px) {
+@media (min-width: 1025px) {
   body {
     margin-top: 4.5%;
   }

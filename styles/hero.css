@@ -24,7 +24,7 @@
   color: #F27494;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   .hero-text {
     width: 55vw;
     height: 45vh;
@@ -33,7 +33,7 @@
   }
 }
 
-@media (min-width:901px) {
+@media (min-width: 1025px) {
   #home {
     justify-content: flex-end !important;
   }

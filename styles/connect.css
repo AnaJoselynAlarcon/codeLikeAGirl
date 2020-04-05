@@ -29,7 +29,7 @@
   margin: 7% auto 0% auto;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   #connect {
     grid-area: connect;
     margin: 3% 3% 5% 3%;
@@ -44,7 +44,7 @@
   }
 }
 
-@media (min-width:901px) {
+@media (min-width: 1025px) {
   #connect {
     padding: 1.4% 0% 0% 0%;
     margin: 3%;
