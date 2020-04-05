@@ -137,7 +137,6 @@ const scrollToSection = (event) => {
 
 
 // --------------- EVENTS ---------------
-
 //Creates desktop navbar
 createNavbar(SECTIONS, 'navbar-list', 'nav');
 
