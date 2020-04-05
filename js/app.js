@@ -42,6 +42,8 @@ const appendAnchorAndList = (navbar, list, anchor) => {
 * createNavbar
 * @description Creates dynamic navbar
 * @param {NodeList} sections - A list with all the html's sections info
+* @param {string} list - The ul's ID name
+* @param {stringç} type - The type of the list to create (mobile or nav)
 */
 const createNavbar = (sections, list, type) => {
   const navbarList = document.querySelector(`#${list}`);
@@ -143,7 +145,7 @@ createNavbar(SECTIONS, 'navbar-list', 'nav');
 createNavbar(SECTIONS, 'mobile-list', 'mobile');
 setMobileMenuListeners();
 
-//Listens for an scroll
+//Listens for a scroll
 window.addEventListener('scroll', setActiveClass);
 
 
