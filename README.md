@@ -1,5 +1,5 @@
 # Code Like A Girl
-Personal Resume
+Responsive Resume
 
 # Description
 This is a landing page of a personal website that seeks to sell me as a developer in a very creative way. <br />
